@@ -44,6 +44,8 @@ public class MoviesQuery {
     HashMap<String, Object> valueMap = new HashMap<String, Object>();
     valueMap.put(":yyyy", 1985);
 
+    // Query with only PK. Supported by Query API
+    // If you want to query with only sort key, you need to make the sort key as GSI first
     QuerySpec querySpec =
         new QuerySpec()
             .withKeyConditionExpression("#yr = :yyyy")
